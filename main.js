@@ -120,6 +120,26 @@ document.getElementById('lista-materiais').addEventListener('click', function (e
             .then(function () {
                 carregarMateriais();
             });
-    }
 
-});
+        if (evento.target.classList.contains('btn-excluir')) {
+
+            var id = evento.target.dataset.id;
+
+            var confirmou = confirm('Tem certeza que deseja excluir este material?');
+
+            if (!confirmou) {
+                return;
+            }
+
+            fetch(API_URL + '/' + id, {
+                method: 'DELETE'
+            })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function () {
+                    carregarMateriais();
+                });
+        }
+
+    });
