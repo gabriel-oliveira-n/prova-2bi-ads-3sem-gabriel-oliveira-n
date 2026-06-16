@@ -47,10 +47,10 @@ Base URL: https://6a30923ca7f8866418d624b1.mockapi.io/almox-saude
 
 ## Como executar
 
-1. Clone ou baixe os arquivos do projeto
-2. Abra a pasta no VS Code
-3. Instale a extensão Live Server
-4. Clique com o botão direito no index.html e selecione Open with Live Server
+1. Clone ou baixe os arquivos do projeto;
+2. Abra a pasta no VS Code;
+3. Instale a extensão Live Server;
+4. Clique com o botão direito no index.html e selecione Open with Live Server.
 
 ## Tecnologias utilizadas
 
