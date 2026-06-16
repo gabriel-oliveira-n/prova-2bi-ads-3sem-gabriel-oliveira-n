@@ -10,6 +10,7 @@ body {
   color: #1a1a1a;
 }
 
+/* HEADER */
 header {
   background: #0F6E56;
   color: white;
@@ -24,4 +25,32 @@ header h1 {
 header p {
   font-size: 13px;
   opacity: 0.7;
+}
+
+/* LAYOUT */
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0F6E56;
+}
+
+.card-body {
+  padding: 1.25rem;
 }
