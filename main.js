@@ -1,4 +1,5 @@
 var API_URL = 'https://6a30923ca7f8866418d624b1.mockapi.io/almox-saude/materiais';
+var listaMateriais = [];
 
 function carregarMateriais() {
     fetch(API_URL)
