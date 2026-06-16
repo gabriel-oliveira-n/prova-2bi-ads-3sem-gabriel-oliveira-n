@@ -54,3 +54,43 @@ main {
 .card-body {
   padding: 1.25rem;
 }
+
+/* FORMULÁRIO */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+}
+
+input, select {
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: #0F6E56;
+  box-shadow: 0 0 0 3px rgba(15, 110, 86, 0.12);
+}
