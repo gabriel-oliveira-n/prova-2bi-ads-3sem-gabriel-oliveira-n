@@ -1,6 +1,19 @@
 var API_URL = 'https://6a30923ca7f8866418d624b1.mockapi.io/almox-saude/materiais';
 var listaMateriais = [];
 
+function validarRetirada(estoqueAtual, quantidadeRetirada) {
+
+    if (quantidadeRetirada <= 0) {
+        return false;
+    }
+
+    if (quantidadeRetirada > estoqueAtual) {
+        return false;
+    }
+
+    return true;
+}
+
 function carregarMateriais() {
     fetch(API_URL)
         .then(function (response) {
@@ -121,25 +134,28 @@ document.getElementById('lista-materiais').addEventListener('click', function (e
                 carregarMateriais();
             });
 
-        if (evento.target.classList.contains('btn-excluir')) {
+    }
 
-            var id = evento.target.dataset.id;
+    if (evento.target.classList.contains('btn-excluir')) {
 
-            var confirmou = confirm('Tem certeza que deseja excluir este material?');
+        var id = evento.target.dataset.id;
 
-            if (!confirmou) {
-                return;
-            }
+        var confirmou = confirm('Tem certeza que deseja excluir este material?');
 
-            fetch(API_URL + '/' + id, {
-                method: 'DELETE'
-            })
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function () {
-                    carregarMateriais();
-                });
+        if (!confirmou) {
+            return;
         }
 
-    });
+        fetch(API_URL + '/' + id, {
+            method: 'DELETE'
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function () {
+                carregarMateriais();
+            });
+
+    }
+
+});
