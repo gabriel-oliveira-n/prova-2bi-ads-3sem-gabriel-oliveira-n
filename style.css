@@ -1,172 +1,174 @@
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  font-family: system-ui, sans-serif;
-  background: #f0f4f2;
-  color: #1a1a1a;
+    font-family: system-ui, sans-serif;
+    background: #f0f4f2;
+    color: #1a1a1a;
 }
 
 /* HEADER */
 header {
-  background: #0F6E56;
-  color: white;
-  padding: 1rem 2rem;
+    background: #0F6E56;
+    color: white;
+    padding: 1rem 2rem;
 }
 
 header h1 {
-  font-size: 18px;
-  font-weight: 600;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 header p {
-  font-size: 13px;
-  opacity: 0.7;
+    font-size: 13px;
+    opacity: 0.7;
 }
 
 /* LAYOUT */
 main {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
 /* CARD */
 .card {
-  background: white;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  margin-bottom: 1.5rem;
-  overflow: hidden;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
 }
 
 .card-header {
-  padding: 0.85rem 1.25rem;
-  border-bottom: 1px solid #eee;
-  font-size: 14px;
-  font-weight: 600;
-  color: #0F6E56;
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F6E56;
 }
 
 .card-body {
-  padding: 1.25rem;
+    padding: 1.25rem;
 }
 
 /* FORMULÁRIO */
 .form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .form-group.full {
-  grid-column: 1 / -1;
+    grid-column: 1 / -1;
 }
 
 label {
-  font-size: 12px;
-  font-weight: 600;
-  color: #555;
-  text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
 }
 
-input, select {
-  height: 38px;
-  padding: 0 12px;
-  border: 1px solid #ccc;
-  border-radius: 7px;
-  font-size: 14px;
-  font-family: inherit;
-  outline: none;
+input,
+select {
+    height: 38px;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
 }
 
-input:focus, select:focus {
-  border-color: #0F6E56;
-  box-shadow: 0 0 0 3px rgba(15, 110, 86, 0.12);
+input:focus,
+select:focus {
+    border-color: #0F6E56;
+    box-shadow: 0 0 0 3px rgba(15, 110, 86, 0.12);
 }
 
 /* BOTÃO */
 #btn-cadastrar {
-  margin-top: 0.5rem;
-  height: 40px;
-  padding: 0 24px;
-  background: #0F6E56;
-  color: white;
-  border: none;
-  border-radius: 7px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
+    margin-top: 0.5rem;
+    height: 40px;
+    padding: 0 24px;
+    background: #0F6E56;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 #btn-cadastrar:hover {
-  background: #085041;
+    background: #085041;
 }
 
 /* FEEDBACK */
 #mensagem {
-  display: none;
-  margin-top: 0.75rem;
-  padding: 10px 14px;
-  border-radius: 7px;
-  font-size: 13px;
-  font-weight: 500;
+    display: none;
+    margin-top: 0.75rem;
+    padding: 10px 14px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 #mensagem.ok {
-  background: #EAF3DE;
-  color: #27500A;
+    background: #EAF3DE;
+    color: #27500A;
 }
 
 #mensagem.erro {
-  background: #FCEBEB;
-  color: #A32D2D;
+    background: #FCEBEB;
+    color: #A32D2D;
 }
 
 /* TABELA */
 table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
 }
 
 th {
-  text-align: left;
-  padding: 10px 14px;
-  font-size: 11px;
-  font-weight: 600;
-  color: #888;
-  text-transform: uppercase;
-  background: #f8f8f6;
-  border-bottom: 1px solid #eee;
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    background: #f8f8f6;
+    border-bottom: 1px solid #eee;
 }
 
 td {
-  padding: 11px 14px;
-  border-bottom: 1px solid #f0f0ee;
+    padding: 11px 14px;
+    border-bottom: 1px solid #f0f0ee;
 }
 
 tbody tr:last-child td {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 tbody tr:hover td {
-  background: #f0faf6;
+    background: #f0faf6;
 }
 
 .empty {
-  text-align: center;
-  padding: 2.5rem;
-  color: #aaa;
-  font-size: 14px;
+    text-align: center;
+    padding: 2.5rem;
+    color: #aaa;
+    font-size: 14px;
 }
