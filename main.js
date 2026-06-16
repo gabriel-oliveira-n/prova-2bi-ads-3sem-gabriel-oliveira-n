@@ -56,29 +56,41 @@ document.getElementById('btn-cadastrar').addEventListener('click', function () {
 
 function renderTabela(materiais) {
 
-  var tbody = document.getElementById('lista-materiais');
-  tbody.innerHTML = '';
+    var tbody = document.getElementById('lista-materiais');
+    tbody.innerHTML = '';
 
-  if (materiais.length == 0) {
-    tbody.innerHTML = '<tr><td colspan="5" class="empty">Nenhum material cadastrado ainda.</td></tr>';
-    return;
-  }
+    if (materiais.length == 0) {
+        tbody.innerHTML = '<tr><td colspan="5" class="empty">Nenhum material cadastrado ainda.</td></tr>';
+        return;
+    }
 
-  for (var i = 0; i < materiais.length; i++) {
-    var tr = document.createElement('tr');
-    tr.innerHTML =
-      '<td>' + (i + 1) + '</td>' +
-      '<td>' + materiais[i].nome + '</td>' +
-      '<td>' + materiais[i].quantidade + '</td>' +
-      '<td>' + materiais[i].unidade + '</td>' +
-      '<td>' +
-        '<input type="number" class="input-retirada" min="1" placeholder="Qtd">' +
-        '<button class="btn-baixar" data-id="' + materiais[i].id + '">Baixar</button>' +
-        '<button class="btn-excluir" data-id="' + materiais[i].id + '">Excluir</button>' +
-      '</td>';
-    tbody.appendChild(tr);
-  }
+    for (var i = 0; i < materiais.length; i++) {
+        var tr = document.createElement('tr');
+        tr.innerHTML =
+            '<td>' + (i + 1) + '</td>' +
+            '<td>' + materiais[i].nome + '</td>' +
+            '<td>' + materiais[i].quantidade + '</td>' +
+            '<td>' + materiais[i].unidade + '</td>' +
+            '<td>' +
+            '<input type="number" class="input-retirada" min="1" placeholder="Qtd">' +
+            '<button class="btn-baixar" data-id="' + materiais[i].id + '">Baixar</button>' +
+            '<button class="btn-excluir" data-id="' + materiais[i].id + '">Excluir</button>' +
+            '</td>';
+        tbody.appendChild(tr);
+    }
 
 }
 
 carregarMateriais();
+
+document.getElementById('lista-materiais').addEventListener('click', function (evento) {
+
+    if (evento.target.classList.contains('btn-baixar')) {
+
+        var id = evento.target.dataset.id;
+
+        console.log('Clicou em Baixar do material com id: ' + id);
+
+    }
+
+});
