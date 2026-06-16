@@ -25,6 +25,8 @@ entradas e saídas de materiais. Dessa forma, o sistema substituirá o controle
 realizado por planilhas, tornando o gerenciamento do estoque mais organizado,
 eficiente e confiável.
 
+## Sprint 1
+
 ## Estrutura do Projeto
 
 almoxarifado-sprint1/
@@ -58,3 +60,43 @@ Base URL: https://6a30923ca7f8866418d624b1.mockapi.io/almox-saude
 - CSS3
 - JavaScript
 - MockAPI.io
+
+## Sprint 2
+
+## Retirada e Exclusão de Materiais
+
+Na Sprint 2 foi implementado o módulo de baixa de estoque (retirada) e exclusão
+de materiais, com validação de quantidade e integração completa com o MockAPI.
+
+### Funcionalidades adicionadas
+
+- Campo de quantidade a retirar em cada linha da tabela (`input-retirada`)
+- Botão de baixa de estoque (`btn-baixar`) — atualiza o material via PUT
+- Botão de exclusão (`btn-excluir`) — remove o material via DELETE
+- Função `validarRetirada(estoqueAtual, quantidadeRetirada)` que impede
+  retiradas inválidas (valores negativos, zero ou maiores que o estoque atual)
+
+### Observação técnica
+
+O contrato original especificava `id="input-retirada"`. Como o campo de
+retirada se repete em cada linha da tabela, e atributos `id` devem ser únicos
+na página, optou-se por usar `class="input-retirada"` no lugar, seguindo a
+mesma lógica recomendada para os botões `btn-baixar` e `btn-excluir`.
+
+### Endpoints utilizados
+
+| Método | Endpoint              | Descrição                          |
+|--------|-----------------------|-------------------------------------|
+| PUT    | /materiais/:id        | Atualiza a quantidade do material   |
+| DELETE | /materiais/:id        | Remove o material do estoque        |
+
+### Testes da função validarRetirada
+
+| Estoque atual | Quantidade retirada | Resultado esperado |
+|---------------|----------------------|----------------------|
+| 10            | 3                     | true                 |
+| 5             | 5                     | true                 |
+| 5             | 10                    | false                |
+| 10            | -2                    | false                |
+| 10            | 0                     | false                |
+| 0             | 1                     | false                |
