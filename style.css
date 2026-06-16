@@ -1,1 +1,11 @@
-/* Caso queira utilizar framework como Bootstrap para estilização, pode utilizar. Basta ignoar esse arquivo */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f0f4f2;
+  color: #1a1a1a;
+}
