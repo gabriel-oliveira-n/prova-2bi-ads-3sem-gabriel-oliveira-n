@@ -57,6 +57,8 @@ document.getElementById('btn-cadastrar').addEventListener('click', function () {
 
 function renderTabela(materiais) {
 
+    listaMateriais = materiais;
+
     var tbody = document.getElementById('lista-materiais');
     tbody.innerHTML = '';
 
