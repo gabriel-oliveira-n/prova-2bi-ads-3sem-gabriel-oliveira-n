@@ -92,7 +92,22 @@ document.getElementById('lista-materiais').addEventListener('click', function (e
 
         var id = evento.target.dataset.id;
 
-        console.log('Clicou em Baixar do material com id: ' + id);
+        var material = listaMateriais.find(function (item) {
+            return item.id == id;
+        });
+
+        var linha = evento.target.closest('tr');
+        var input = linha.querySelector('.input-retirada');
+        var quantidadeRetirada = parseInt(input.value);
+
+        var valido = validarRetirada(material.quantidade, quantidadeRetirada);
+
+        if (!valido) {
+            alert('Quantidade inválida! Verifique se o valor não é negativo nem maior que o estoque atual (' + material.quantidade + ').');
+            return;
+        }
+
+        console.log('Validação passou! Pode prosseguir com o PUT.');
 
     }
 
