@@ -107,8 +107,19 @@ document.getElementById('lista-materiais').addEventListener('click', function (e
             return;
         }
 
-        console.log('Validação passou! Pode prosseguir com o PUT.');
+        var novaQuantidade = material.quantidade - quantidadeRetirada;
 
+        fetch(API_URL + '/' + id, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ quantidade: novaQuantidade })
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function () {
+                carregarMateriais();
+            });
     }
 
 });
