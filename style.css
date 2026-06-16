@@ -112,3 +112,23 @@ input:focus, select:focus {
 #btn-cadastrar:hover {
   background: #085041;
 }
+
+/* FEEDBACK */
+#mensagem {
+  display: none;
+  margin-top: 0.75rem;
+  padding: 10px 14px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+#mensagem.ok {
+  background: #EAF3DE;
+  color: #27500A;
+}
+
+#mensagem.erro {
+  background: #FCEBEB;
+  color: #A32D2D;
+}
