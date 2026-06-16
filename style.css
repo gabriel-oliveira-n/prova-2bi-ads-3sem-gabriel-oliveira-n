@@ -94,3 +94,21 @@ input:focus, select:focus {
   border-color: #0F6E56;
   box-shadow: 0 0 0 3px rgba(15, 110, 86, 0.12);
 }
+
+/* BOTÃO */
+#btn-cadastrar {
+  margin-top: 0.5rem;
+  height: 40px;
+  padding: 0 24px;
+  background: #0F6E56;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#btn-cadastrar:hover {
+  background: #085041;
+}
