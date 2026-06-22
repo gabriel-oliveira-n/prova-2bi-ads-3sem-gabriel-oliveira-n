@@ -21,6 +21,10 @@ function carregarMateriais() {
         })
         .then(function (dados) {
             renderTabela(dados);
+        })
+        .catch(function (erro) {
+            console.error('Erro ao carregar materiais:', erro);
+            alert('Não foi possível carregar os materiais. Verifique sua conexão.');
         });
 }
 
@@ -53,7 +57,6 @@ document.getElementById('btn-cadastrar').addEventListener('click', function () {
             return response.json();
         })
         .then(function () {
-
             document.getElementById('input-nome').value = '';
             document.getElementById('input-quantidade').value = '';
             document.getElementById('input-unidade').value = '';
@@ -63,7 +66,12 @@ document.getElementById('btn-cadastrar').addEventListener('click', function () {
             msg.textContent = nome + ' cadastrado com sucesso!';
 
             carregarMateriais();
-
+        })
+        .catch(function (erro) {
+            console.error('Erro ao cadastrar material:', erro);
+            msg.className = 'erro';
+            msg.style.display = 'block';
+            msg.textContent = 'Erro ao conectar com a API. Tente novamente.';
         });
 
 });
@@ -146,6 +154,10 @@ document.getElementById('lista-materiais').addEventListener('click', function (e
             })
             .then(function () {
                 carregarMateriais();
+            })
+            .catch(function (erro) {
+                console.error('Erro ao atualizar material:', erro);
+                alert('Não foi possível atualizar o estoque. Verifique sua conexão.');
             });
 
     }
