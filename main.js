@@ -173,3 +173,7 @@ document.getElementById('lista-materiais').addEventListener('click', function (e
     }
 
 });
+
+document.getElementById('input-busca').addEventListener('input', function () {
+    renderTabela(listaMateriais);
+});
