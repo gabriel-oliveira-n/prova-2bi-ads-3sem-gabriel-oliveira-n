@@ -72,26 +72,40 @@ function renderTabela(materiais) {
 
     listaMateriais = materiais;
 
+    var busca = document.getElementById('input-busca').value.toLowerCase();
+
+    var filtrados = materiais.filter(function (item) {
+        return item.nome.toLowerCase().includes(busca);
+    });
+
+    document.getElementById('total-itens').textContent = materiais.length;
+
     var tbody = document.getElementById('lista-materiais');
     tbody.innerHTML = '';
 
-    if (materiais.length == 0) {
-        tbody.innerHTML = '<tr><td colspan="5" class="empty">Nenhum material cadastrado ainda.</td></tr>';
+    if (filtrados.length == 0) {
+        tbody.innerHTML = '<tr><td colspan="5" class="empty">Nenhum material encontrado.</td></tr>';
         return;
     }
 
-    for (var i = 0; i < materiais.length; i++) {
+    for (var i = 0; i < filtrados.length; i++) {
         var tr = document.createElement('tr');
+
+        if (filtrados[i].quantidade < 10) {
+            tr.className = 'estoque-critico';
+        }
+
         tr.innerHTML =
             '<td>' + (i + 1) + '</td>' +
-            '<td>' + materiais[i].nome + '</td>' +
-            '<td>' + materiais[i].quantidade + '</td>' +
-            '<td>' + materiais[i].unidade + '</td>' +
+            '<td>' + filtrados[i].nome + '</td>' +
+            '<td>' + filtrados[i].quantidade + '</td>' +
+            '<td>' + filtrados[i].unidade + '</td>' +
             '<td>' +
             '<input type="number" class="input-retirada" min="1" placeholder="Qtd">' +
-            '<button class="btn-baixar" data-id="' + materiais[i].id + '">Baixar</button>' +
-            '<button class="btn-excluir" data-id="' + materiais[i].id + '">Excluir</button>' +
+            '<button class="btn-baixar" data-id="' + filtrados[i].id + '">Baixar</button>' +
+            '<button class="btn-excluir" data-id="' + filtrados[i].id + '">Excluir</button>' +
             '</td>';
+
         tbody.appendChild(tr);
     }
 
