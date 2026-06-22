@@ -103,3 +103,32 @@ mesma lógica recomendada para os botões `btn-baixar` e `btn-excluir`.
 | 10            | -2                    | false                |
 | 10            | 0                     | false                |
 | 0             | 1                     | false                |
+
+## Sprint 3
+
+# Busca, Alertas e Deploy
+
+Finalização do sistema com barra de pesquisa, alertas visuais de estoque
+baixo, tratamento de erros de conexão e publicação do projeto na nuvem.
+
+## O que foi feito
+
+- Barra de pesquisa (`input-busca`) que filtra a tabela em tempo real
+- Contador de itens (`total-itens`) exibido no cabeçalho da tabela
+- Linhas com estoque menor que 10 recebem a classe `estoque-critico` (fundo vermelho)
+- Tratamento de erros com `.catch()` em todos os fetches
+- Deploy do projeto via GitHub Pages
+
+
+## Endpoints utilizados
+
+| Método | Endpoint        | Descrição                       |
+|--------|-----------------|-----------------------------------|
+| GET    | /materiais      | Lista e filtra os materiais       |
+| POST   | /materiais      | Cadastra um novo material         |
+| PUT    | /materiais/:id  | Atualiza a quantidade do material |
+| DELETE | /materiais/:id  | Remove o material do estoque      |
+
+## Autor
+
+Gabriel Oliveira
